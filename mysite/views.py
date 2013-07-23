@@ -14,5 +14,11 @@ def current_datetime(request):
     return render(request, 'current_datetime.html', {'current_date': now})
 
 
+def display_meta(request):
+    values = request.META.items()
+    values.sort()
+    return render(request, 'request_explore.html', {'pair_list': values, })
+
+
 def hello(request):
     return HttpResponse("Hello world!")
